@@ -54,7 +54,7 @@ const AllArtifact = () => {
             </Helmet>
             <h2 className="text-4xl font-medium text-center my-10">All Artifacts</h2>
 
-            <div className="flex items-center gap-4 my-5">
+            <div className="flex items-center justify-between gap-4 my-5">
                 <input
                     type="text"
                     placeholder="Search artifacts..."
