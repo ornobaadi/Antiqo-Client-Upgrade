@@ -48,12 +48,12 @@ Antiqo is a dynamic platform for historical artifact enthusiasts. It enables use
 ### How to Run Locally
 1. **Clone the repositories:**
    ```bash
-   git clone https://github.com/ornobaadi/Antiqo-Tracker-Client.git
+   git clone https://github.com/ornobaadi/Antiqo-Client-Upgrade.git
    git clone https://github.com/ornobaadi/Antiqo-Tracker-Server.git
    ```
 2. **Navigate to each directory and install dependencies:**
    ```bash
-   cd Antiqo-Tracker-Client
+   cd Antiqo-Client-Upgrade
    npm install
    
    cd ../Antiqo-Tracker-Server

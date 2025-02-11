@@ -6,29 +6,45 @@ const AllArtifact = () => {
     const [artifacts, setArtifacts] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredArtifacts, setFilteredArtifacts] = useState([]);
+    const [sortOrder, setSortOrder] = useState("default");
 
     useEffect(() => {
         fetch("https://historical-artifacts-server.vercel.app/artifacts")
             .then((res) => res.json())
             .then((data) => {
-                setArtifacts(data);
-                setFilteredArtifacts(data);
+                const processedData = data.map(artifact => ({
+                    ...artifact,
+                    likeCount: artifact.likeCount ?? 0 // Default likeCount to 0 if missing
+                }));
+                setArtifacts(processedData);
+                setFilteredArtifacts(processedData);
             });
     }, []);
 
     useEffect(() => {
-        if (searchTerm.trim() === "") {
-            setFilteredArtifacts(artifacts);
-        } else {
-            const filtered = artifacts.filter((artifact) =>
+        let updatedArtifacts = [...artifacts];
+
+        if (searchTerm.trim() !== "") {
+            updatedArtifacts = updatedArtifacts.filter((artifact) =>
                 artifact.artifactName.toLowerCase().includes(searchTerm.toLowerCase())
             );
-            setFilteredArtifacts(filtered);
         }
-    }, [searchTerm, artifacts]);
+
+        if (sortOrder === "asc") {
+            updatedArtifacts.sort((a, b) => (a.likeCount ?? 0) - (b.likeCount ?? 0));
+        } else if (sortOrder === "desc") {
+            updatedArtifacts.sort((a, b) => (b.likeCount ?? 0) - (a.likeCount ?? 0));
+        }
+
+        setFilteredArtifacts(updatedArtifacts);
+    }, [searchTerm, sortOrder, artifacts]);
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
+    };
+
+    const handleSortChange = (e) => {
+        setSortOrder(e.target.value);
     };
 
     return (
@@ -46,6 +62,15 @@ const AllArtifact = () => {
                     onChange={handleSearchChange}
                     className="input input-bordered w-full max-w-md"
                 />
+                <select
+                    value={sortOrder}
+                    onChange={handleSortChange}
+                    className="select select-bordered"
+                >
+                    <option value="default">Sort by</option>
+                    <option value="asc">Likes (Ascending)</option>
+                    <option value="desc">Likes (Descending)</option>
+                </select>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-5">
