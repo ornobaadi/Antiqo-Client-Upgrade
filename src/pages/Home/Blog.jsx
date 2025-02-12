@@ -14,11 +14,11 @@ const BlogCard = ({ category, title, excerpt, author, readTime, image }) => (
                 </span>
             </div>
         </div>
-        <div className="p-6">
+        <div className="p-8">
             <h3 className="text-xl font-medium mb-2">
                 {title}
             </h3>
-            <p className="text-sm mb-4 line-clamp-2">
+            <p className="text-sm mb-8 line-clamp-2">
                 {excerpt}
             </p>
             <div className="flex items-center justify-between text-sm text-gray-500">
@@ -106,8 +106,8 @@ const Blog = () => {
     ];
 
     return (
-        <section className="py-16">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
                 <h2 className="text-3xl md:text-4xl font-medium text-center my-10 lg:my-20">Latest Blogs</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((blog, index) => (

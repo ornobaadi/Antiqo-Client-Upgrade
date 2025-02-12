@@ -63,7 +63,7 @@ const TopContributors = () => {
         <section className="py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center my-10 lg:my-20 gap-5">
-                    <h2 className="text-3xl md:text-4xl font-medium text-center ">Top Contributors</h2><span className="text-sm text-gray-400">Last Updated: February 2024</span>
+                    <h2 className="text-3xl md:text-4xl font-medium text-center ">Top Contributors</h2><span className="text-sm text-gray-400">Last Updated: February 2025</span>
                     
                 </div>
 

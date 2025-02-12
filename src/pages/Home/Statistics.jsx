@@ -39,7 +39,7 @@ const Statistics = () => {
                     {stats.map((stat, index) => (
                         <div
                             key={index}
-                            className="p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300"
+                            className="p-10 bg-gray-900 rounded-lg hover:bg-gray-700 transition-colors duration-300"
                         >
                             <div className="text-center">
                                 <span className="block text-4xl font-bold text-gray-100 mb-2">
