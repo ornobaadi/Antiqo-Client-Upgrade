@@ -5,7 +5,7 @@ const HotArtifactCard = ({ artifact }) => {
     const { _id, artifactName, artifactImage, historicalContext, likeCount = 0 } = artifact;
 
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card rounded-lg bg-base-100 shadow-xl">
             <figure>
                 <img src={artifactImage} alt={artifactName} className="h-48 w-full object-cover" />
             </figure>

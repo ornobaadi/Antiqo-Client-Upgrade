@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center bg-neutral text-gray-400 p-10">
+        <footer className="footer footer-center bg-gray-900 text-gray-400 p-10">
             <aside>
                 <img className="w-32" src="/logo.webp" alt="" />
                 <p className="font-bold">
@@ -29,7 +29,7 @@ const Footer = () => {
                     <a className="hover:text-pink-500" href="https://www.instagram.com/">
                         <Instagram></Instagram>
                     </a>
-                    <a className="hover:text-gray-900" href="https://github.com/">
+                    <a className="hover:text-gray-50" href="https://github.com/">
                         <Github></Github>
                     </a>
                 </div>
